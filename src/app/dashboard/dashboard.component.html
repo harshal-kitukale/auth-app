@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div *ngFor="let product of products">
+  <mat-card>
+    <img
+      mat-card-image
+      [src]="product.image"
+      alt="Product Image"
+      style="width: 200px; height: 150px;"
+    />
+    <mat-card-content>
+      <p>Product Name: {{ product.name }}</p>
+      <p>Price: ${{ product.price }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart(product)">
+        Add to Cart
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
